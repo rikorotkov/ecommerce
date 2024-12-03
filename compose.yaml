@@ -1,0 +1,10 @@
+services:
+  postgres:
+    container_name: ecommerce
+    image: 'postgres:latest'
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: ecommerce
+    ports:
+      - 5432:5432
