@@ -33,6 +33,21 @@ public class Product {
 
     private int stockQuantity;
 
-    private List<Review> reviews;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews = new ArrayList<>();
+
+    private Double rating = 0.0;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Discount> discounts = new ArrayList<>();
+
+    public Double getRating() {
+        return reviews.isEmpty()
+                ? 0.0
+                :reviews.stream()
+                .mapToInt(Review::getRating)
+                .average()
+                .orElse(0.0);
+    }
 
 }
