@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/db.changelog-roles.yaml
+#  - include:
+#      file: db/changelog/db.changelog-users.yaml
+#  - include:
+#      file: db/changelog/db.changelog-user-roles.yaml
+#  - include:
+#      file: db/changelog/db.changelog-categories.yaml
+#  - include:
+#      file: db/changelog/db.changelog-products.yaml

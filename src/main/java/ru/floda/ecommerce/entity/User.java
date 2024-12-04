@@ -2,7 +2,9 @@ package ru.floda.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,4 +36,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();
+
+    @CreatedDate
+    private Date createdAt;
 }
