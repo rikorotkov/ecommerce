@@ -1,3 +1,25 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/db.changelog-roles.yaml
+      file: db/changelog/001-create-roles-table.yaml
+  - include:
+      file: db/changelog/002-insert-default-roles.yaml
+  - include:
+      file: db/changelog/003-create-categories-table.yaml
+  - include:
+      file: db/changelog/004-insert-default-categories.yaml
+  - include:
+      file: db/changelog/005-create-products-table.yaml
+  - include:
+      file: db/changelog/006-create-discounts-table.yaml
+  - include:
+      file: db/changelog/007-create-product_images-table.yaml
+  - include:
+      file: db/changelog/008-create-users-table.yaml
+  - include:
+      file: db/changelog/009-create-reviews-table.yaml
+  - include:
+      file: db/changelog/010-create-review_photos-table.yaml
+  - include:
+      file: db/changelog/011-create-carts-table.yaml
+  - include:
+      file: db/changelog/012-create-cart_items-table.yaml
