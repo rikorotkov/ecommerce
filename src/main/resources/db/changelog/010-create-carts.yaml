@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 10
       author: Roman
       changes:
         - createTable:
-            tableName: review_photos
+            tableName: carts
             columns:
               - column:
                   name: id
@@ -12,20 +12,15 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
-                  name: file_name
-                  type: VARCHAR(255)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: review_id
+                  name: user_id
                   type: BIGINT
                   constraints:
                     nullable: false
+                    unique: true
         - addForeignKeyConstraint:
-            baseTableName: review_photos
-            baseColumnNames: review_id
-            referencedTableName: reviews
+            baseTableName: carts
+            baseColumnNames: user_id
+            referencedTableName: users
             referencedColumnNames: id
-            constraintName: fk_review_photos_reviews
+            constraintName: fk_cart_user

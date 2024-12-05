@@ -1,32 +1,43 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 18
       author: Roman
       changes:
         - insert:
             tableName: roles
             columns:
               - column:
+                  name: id
+                  value: 1
+              - column:
                   name: name
                   value: ROLE_ADMIN
               - column:
                   name: description
-                  value: Admin
+                  value: 'Администратор с полным доступом'
+
         - insert:
             tableName: roles
             columns:
+              - column:
+                  name: id
+                  value: 2
               - column:
                   name: name
                   value: ROLE_USER
               - column:
                   name: description
-                  value: User
+                  value: 'Рядовой пользователь'
+
         - insert:
             tableName: roles
             columns:
+              - column:
+                  name: id
+                  value: 3
               - column:
                   name: name
                   value: ROLE_MANAGER
               - column:
                   name: description
-                  value: Manager
+                  value: 'Мененджер'

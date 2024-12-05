@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 9
       author: Roman
       changes:
         - createTable:
-            tableName: product_images
+            tableName: discounts
             columns:
               - column:
                   name: id
@@ -12,20 +12,29 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
-                  name: url
+                  name: name
                   type: VARCHAR(255)
-                  constraints:
-                    nullable: false
+              - column:
+                  name: percentage
+                  type: DECIMAL(5, 2)
+              - column:
+                  name: amount
+                  type: DECIMAL(10, 2)
+              - column:
+                  name: start_date
+                  type: TIMESTAMP
+              - column:
+                  name: end_date
+                  type: TIMESTAMP
               - column:
                   name: product_id
                   type: BIGINT
                   constraints:
                     nullable: false
         - addForeignKeyConstraint:
-            baseTableName: product_images
+            baseTableName: discounts
             baseColumnNames: product_id
             referencedTableName: products
             referencedColumnNames: id
-            constraintName: fk_product_images_products
+            constraintName: fk_discounts_product

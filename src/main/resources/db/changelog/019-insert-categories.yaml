@@ -1,0 +1,104 @@
+databaseChangeLog:
+  - changeSet:
+      id: 19
+      author: Roman
+      changes:
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Компьютеры'
+              - column:
+                  name: description
+                  value: 'Десктопы, моноблоки и рабочие станции.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Ноутбуки'
+              - column:
+                  name: description
+                  value: 'Портативные компьютеры для личного и профессионального использования.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Смартфоны'
+              - column:
+                  name: description
+                  value: 'Мобильные телефоны с расширенными функциями и интернет-соединением.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Смарт-часы'
+              - column:
+                  name: description
+                  value: 'Носимая электроника для отслеживания физической активности и получения уведомлений.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Клавиатуры'
+              - column:
+                  name: description
+                  value: 'Устройства ввода для набора текста и взаимодействия с компьютером.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Мыши'
+              - column:
+                  name: description
+                  value: 'Устройства для перемещения указателя и взаимодействия с графическим интерфейсом.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Наушники'
+              - column:
+                  name: description
+                  value: 'Аудиоустройства для прослушивания музыки или общения.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Колонки'
+              - column:
+                  name: description
+                  value: 'Аудиоустройства для усиления звука при прослушивании музыки, фильмов и игр.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Планшеты'
+              - column:
+                  name: description
+                  value: 'Портативные устройства с сенсорным экраном для потребления мультимедиа.'
+
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Фотокамеры'
+              - column:
+                  name: description
+                  value: 'Устройства для съемки фото и видео.'

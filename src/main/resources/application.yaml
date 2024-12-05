@@ -10,10 +10,11 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
 
   liquibase:
-    enabled: false
+    enabled: true
+    change-log: db.changelog-master.yaml
 
 server:
   port: 8888

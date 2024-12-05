@@ -3,7 +3,7 @@ package ru.floda.ecommerce.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Entity
 @Getter
@@ -26,9 +26,9 @@ public class Discount {
     private Double amount;
     // Фиксированный размер скидки
 
-    private LocalDateTime startDate;
+    private Instant startDate;
 
-    private LocalDateTime endDate;
+    private Instant endDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)

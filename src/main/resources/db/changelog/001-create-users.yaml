@@ -4,45 +4,45 @@ databaseChangeLog:
       author: Roman
       changes:
         - createTable:
-            tableName: products
+            tableName: users
             columns:
               - column:
                   name: id
                   type: BIGINT
-                  autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
+                    autoIncrement: true
               - column:
-                  name: name
+                  name: first_name
                   type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
-                  name: description
-                  type: TEXT
-              - column:
-                  name: price
-                  type: DOUBLE
+                  name: last_name
+                  type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
-                  name: category_id
-                  type: BIGINT
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
-                  name: stock_quantity
-                  type: INT
+                  name: created_at
+                  type: TIMESTAMP
                   constraints:
                     nullable: false
+                    defaultValueComputed: CURRENT_TIMESTAMP
               - column:
-                  name: rating
-                  type: DOUBLE
-                  defaultValueNumeric: 0.0
-        - addForeignKeyConstraint:
-            baseTableName: products
-            baseColumnNames: category_id
-            referencedTableName: categories
-            referencedColumnNames: id
-            constraintName: fk_products_categories
+                  name: updated_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+                    defaultValueComputed: CURRENT_TIMESTAMP

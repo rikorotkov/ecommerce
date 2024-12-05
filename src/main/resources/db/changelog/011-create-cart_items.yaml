@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 11
       author: Roman
       changes:
         - createTable:
@@ -12,7 +12,6 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: cart_id
                   type: BIGINT
@@ -25,7 +24,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: quantity
-                  type: INT
+                  type: INTEGER
                   constraints:
                     nullable: false
               - column:
@@ -38,18 +37,15 @@ databaseChangeLog:
                   type: TIMESTAMP
                   constraints:
                     nullable: false
-
         - addForeignKeyConstraint:
-            constraintName: fk_cart_items_cart
             baseTableName: cart_items
             baseColumnNames: cart_id
             referencedTableName: carts
             referencedColumnNames: id
-            onDelete: CASCADE
-
+            constraintName: fk_cart_items_cart
         - addForeignKeyConstraint:
-            constraintName: fk_cart_items_product
             baseTableName: cart_items
             baseColumnNames: product_id
             referencedTableName: products
             referencedColumnNames: id
+            constraintName: fk_cart_items_product

@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 4
       author: Roman
       changes:
         - createTable:
-            tableName: roles
+            tableName: categories
             columns:
               - column:
                   name: id
@@ -19,4 +19,4 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: description
-                  type: VARCHAR(255)
+                  type: TEXT

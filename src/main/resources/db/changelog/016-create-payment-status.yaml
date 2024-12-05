@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 15
+      author: Roman
+      changes:
+        - sql:
+            splitStatements: false
+            stripComments: true
+            sql: |
+              CREATE TYPE payment_status AS ENUM ('CANCELED', 'APPROVE');
