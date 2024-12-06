@@ -8,6 +8,7 @@ import ru.floda.ecommerce.repository.CategoryRepository;
 import ru.floda.ecommerce.service.CategoryService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -17,7 +18,24 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoryDto> getAllCategories() {
         List<Category> categories = categoryRepository.findAll();
-        return null;
-        // TODO category service impl + mapper
+        return categories.stream()
+                .map(this::convertToDto)
+                .collect(Collectors.toList());
+    }
+
+    private CategoryDto convertToDto(Category category) {
+        CategoryDto dto = new CategoryDto();
+        dto.setId(category.getId());
+        dto.setName(category.getName());
+        dto.setDescription(category.getDescription());
+        return dto;
+    }
+
+    private Category convertToEntity(CategoryDto dto) {
+        Category category = new Category();
+        category.setId(dto.getId());
+        category.setName(dto.getName());
+        category.setDescription(dto.getDescription());
+        return category;
     }
 }
