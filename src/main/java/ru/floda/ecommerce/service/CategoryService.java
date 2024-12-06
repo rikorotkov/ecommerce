@@ -3,9 +3,14 @@ package ru.floda.ecommerce.service;
 import ru.floda.ecommerce.dto.CategoryDto;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CategoryService {
 
-    List<CategoryDto> getAllCategories();
+    List<CategoryDto> findAllCategories();
+
+    Optional<CategoryDto> findCategoryById(Long id);
+
+    CategoryDto createNewCategory(CategoryDto categoryDto);
 
 }
