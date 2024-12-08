@@ -16,5 +16,10 @@ spring:
     enabled: true
     change-log: db.changelog-master.yaml
 
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger
+
 server:
   port: 8888
