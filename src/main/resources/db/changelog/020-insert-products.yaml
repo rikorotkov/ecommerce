@@ -1,0 +1,466 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20
+      author: Roman
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Игровой ПК Predator G3'
+              - column:
+                  name: description
+                  value: 'Мощный игровой компьютер с процессором Intel Core i7 и видеокартой RTX 3070.'
+              - column:
+                  name: price
+                  value: 150000.00
+              - column:
+                  name: category_id
+                  value: 1
+              - column:
+                  name: stock_quantity
+                  value: 10
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Рабочая станция HP Z2'
+              - column:
+                  name: description
+                  value: 'Компьютер для профессионалов с производительным процессором Xeon и SSD 1 ТБ.'
+              - column:
+                  name: price
+                  value: 200000.00
+              - column:
+                  name: category_id
+                  value: 1
+              - column:
+                  name: stock_quantity
+                  value: 5
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Моноблок Dell Inspiron 24'
+              - column:
+                  name: description
+                  value: 'Универсальный моноблок для дома и офиса с 24-дюймовым экраном.'
+              - column:
+                  name: price
+                  value: 90000.00
+              - column:
+                  name: category_id
+                  value: 1
+              - column:
+                  name: stock_quantity
+                  value: 15
+
+        # Ноутбуки
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'MacBook Pro 14 M2'
+              - column:
+                  name: description
+                  value: 'Ноутбук для профессионалов с мощным чипом Apple M2 Pro.'
+              - column:
+                  name: price
+                  value: 250000.00
+              - column:
+                  name: category_id
+                  value: 2
+              - column:
+                  name: stock_quantity
+                  value: 7
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'ASUS ZenBook 14'
+              - column:
+                  name: description
+                  value: 'Легкий и стильный ноутбук с экраном OLED.'
+              - column:
+                  name: price
+                  value: 120000.00
+              - column:
+                  name: category_id
+                  value: 2
+              - column:
+                  name: stock_quantity
+                  value: 20
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Lenovo ThinkPad X1 Carbon'
+              - column:
+                  name: description
+                  value: 'Надежный ноутбук для бизнеса с процессором Intel Core i7.'
+              - column:
+                  name: price
+                  value: 180000.00
+              - column:
+                  name: category_id
+                  value: 2
+              - column:
+                  name: stock_quantity
+                  value: 10
+
+        # Смартфоны
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'iPhone 15 Pro Max'
+              - column:
+                  name: description
+                  value: 'Флагманский смартфон Apple с камерой 48 МП и процессором A17 Bionic.'
+              - column:
+                  name: price
+                  value: 160000.00
+              - column:
+                  name: category_id
+                  value: 3
+              - column:
+                  name: stock_quantity
+                  value: 30
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Samsung Galaxy S23 Ultra'
+              - column:
+                  name: description
+                  value: 'Смартфон с камерой 200 МП и экраном AMOLED 120 Гц.'
+              - column:
+                  name: price
+                  value: 140000.00
+              - column:
+                  name: category_id
+                  value: 3
+              - column:
+                  name: stock_quantity
+                  value: 25
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Google Pixel 8 Pro'
+              - column:
+                  name: description
+                  value: 'Смартфон с чистым Android и выдающимися фотовозможностями.'
+              - column:
+                  name: price
+                  value: 110000.00
+              - column:
+                  name: category_id
+                  value: 3
+              - column:
+                  name: stock_quantity
+                  value: 15
+        # Смарт-часы
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Apple Watch Series 9'
+              - column:
+                  name: description
+                  value: 'Смарт-часы с функцией мониторинга здоровья и экосистемой Apple.'
+              - column:
+                  name: price
+                  value: 40000.00
+              - column:
+                  name: category_id
+                  value: 4
+              - column:
+                  name: stock_quantity
+                  value: 25
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Samsung Galaxy Watch 6'
+              - column:
+                  name: description
+                  value: 'Смарт-часы с AMOLED дисплеем и функцией мониторинга сна.'
+              - column:
+                  name: price
+                  value: 35000.00
+              - column:
+                  name: category_id
+                  value: 4
+              - column:
+                  name: stock_quantity
+                  value: 20
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Huawei Watch GT 3'
+              - column:
+                  name: description
+                  value: 'Часы с длительным временем автономной работы и широким функционалом.'
+              - column:
+                  name: price
+                  value: 30000.00
+              - column:
+                  name: category_id
+                  value: 4
+              - column:
+                  name: stock_quantity
+                  value: 30
+
+        # Клавиатуры
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Logitech G915 TKL'
+              - column:
+                  name: description
+                  value: 'Беспроводная механическая клавиатура с RGB-подсветкой.'
+              - column:
+                  name: price
+                  value: 15000.00
+              - column:
+                  name: category_id
+                  value: 5
+              - column:
+                  name: stock_quantity
+                  value: 10
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Razer BlackWidow V4'
+              - column:
+                  name: description
+                  value: 'Игровая механическая клавиатура с быстрыми переключателями.'
+              - column:
+                  name: price
+                  value: 12000.00
+              - column:
+                  name: category_id
+                  value: 5
+              - column:
+                  name: stock_quantity
+                  value: 15
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Apple Magic Keyboard'
+              - column:
+                  name: description
+                  value: 'Минималистичная клавиатура для устройств Apple.'
+              - column:
+                  name: price
+                  value: 10000.00
+              - column:
+                  name: category_id
+                  value: 5
+              - column:
+                  name: stock_quantity
+                  value: 20
+
+        # Мыши
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Logitech MX Master 3S'
+              - column:
+                  name: description
+                  value: 'Мышь для работы с эргономичным дизайном и продуманным управлением.'
+              - column:
+                  name: price
+                  value: 8000.00
+              - column:
+                  name: category_id
+                  value: 6
+              - column:
+                  name: stock_quantity
+                  value: 20
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Razer DeathAdder V3'
+              - column:
+                  name: description
+                  value: 'Игровая мышь с высокой чувствительностью и RGB-подсветкой.'
+              - column:
+                  name: price
+                  value: 6000.00
+              - column:
+                  name: category_id
+                  value: 6
+              - column:
+                  name: stock_quantity
+                  value: 15
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Apple Magic Mouse 2'
+              - column:
+                  name: description
+                  value: 'Минималистичная мышь с сенсорным управлением.'
+              - column:
+                  name: price
+                  value: 7500.00
+              - column:
+                  name: category_id
+                  value: 6
+              - column:
+                  name: stock_quantity
+                  value: 10
+
+        # Наушники
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Sony WH-1000XM5'
+              - column:
+                  name: description
+                  value: 'Наушники с активным шумоподавлением и высоким качеством звука.'
+              - column:
+                  name: price
+                  value: 25000.00
+              - column:
+                  name: category_id
+                  value: 7
+              - column:
+                  name: stock_quantity
+                  value: 30
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'AirPods Pro 2'
+              - column:
+                  name: description
+                  value: 'Наушники с поддержкой пространственного звука и шумоподавлением.'
+              - column:
+                  name: price
+                  value: 20000.00
+              - column:
+                  name: category_id
+                  value: 7
+              - column:
+                  name: stock_quantity
+                  value: 40
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'JBL Tune 760NC'
+              - column:
+                  name: description
+                  value: 'Бюджетные наушники с качественным звуком и шумоподавлением.'
+              - column:
+                  name: price
+                  value: 12000.00
+              - column:
+                  name: category_id
+                  value: 7
+              - column:
+                  name: stock_quantity
+                  value: 50
+
+        # Колонки
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'JBL PartyBox 310'
+              - column:
+                  name: description
+                  value: 'Портативная колонка для вечеринок с мощным басом и подсветкой.'
+              - column:
+                  name: price
+                  value: 30000.00
+              - column:
+                  name: category_id
+                  value: 8
+              - column:
+                  name: stock_quantity
+                  value: 10
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Harman Kardon Onyx Studio 8'
+              - column:
+                  name: description
+                  value: 'Стильная колонка с премиальным качеством звука.'
+              - column:
+                  name: price
+                  value: 25000.00
+              - column:
+                  name: category_id
+                  value: 8
+              - column:
+                  name: stock_quantity
+                  value: 20
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: 'Marshall Emberton'
+              - column:
+                  name: description
+                  value: 'Компактная колонка с фирменным звуком Marshall.'
+              - column:
+                  name: price
+                  value: 18000.00
+              - column:
+                  name: category_id
+                  value: 8
+              - column:
+                  name: stock_quantity
+                  value: 25
