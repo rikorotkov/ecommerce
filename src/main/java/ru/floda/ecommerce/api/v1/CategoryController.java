@@ -19,14 +19,14 @@ public class CategoryController {
     @GetMapping
     public ResponseEntity<List<CategoryDto>> getAllCategories() {
         List<CategoryDto> categories = categoryService.findAllCategories();
-        return ResponseEntity.ok(categories);
+        return ResponseEntity.status(HttpStatus.OK).body(categories);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<CategoryDto> getCategoryById(@PathVariable Long id) {
         CategoryDto dto = categoryService.findCategoryById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Категория с id: " + id + " не найдена"));
-        return ResponseEntity.ok(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PostMapping("/new")

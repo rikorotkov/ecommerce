@@ -1,8 +1,6 @@
 package ru.floda.ecommerce.service;
 
 import ru.floda.ecommerce.dto.ProductDto;
-import ru.floda.ecommerce.entity.Category;
-import ru.floda.ecommerce.entity.ProductImage;
 
 import java.util.List;
 import java.util.Optional;

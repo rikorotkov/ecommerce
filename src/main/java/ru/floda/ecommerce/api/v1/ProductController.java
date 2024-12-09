@@ -24,9 +24,9 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductDto> findProductById(@PathVariable Long id) {
-        ProductDto productDto = productService.findProductById(id)
+        ProductDto dto = productService.findProductById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Товар с id: " + id + "не найден"));
-        return ResponseEntity.status(HttpStatus.OK).body(productDto);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PostMapping("/new")
@@ -36,9 +36,9 @@ public class ProductController {
     }
 
     @PutMapping()
-    public ResponseEntity<ProductDto> updateProduct(@RequestBody Long id, ProductDto productDto) {
-        productDto = productService.updateProduct(id, productDto);
-        return ResponseEntity.status(HttpStatus.OK).body(productDto);
+    public ResponseEntity<ProductDto> updateProduct(@RequestBody Long id, ProductDto dto) {
+        dto = productService.updateProduct(id, dto);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @DeleteMapping()
