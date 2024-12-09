@@ -1,15 +1,18 @@
 package ru.floda.ecommerce.service;
 
 import ru.floda.ecommerce.dto.ProductDto;
+import ru.floda.ecommerce.entity.Category;
+import ru.floda.ecommerce.entity.ProductImage;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductService {
     List<ProductDto> findAllProducts();
 
-    ProductDto findProductById(Long id);
+    Optional<ProductDto> findProductById(Long id);
 
-    ProductDto createProduct(ProductDto product);
+    ProductDto createNewProduct(ProductDto productDto);
 
     ProductDto updateProduct(Long id, ProductDto product);
 
