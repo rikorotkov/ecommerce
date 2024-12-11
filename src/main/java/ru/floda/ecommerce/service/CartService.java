@@ -1,5 +1,7 @@
 package ru.floda.ecommerce.service;
 
-public interface CartService {
+import ru.floda.ecommerce.dto.CartDto;
 
+public interface CartService {
+    CartDto getOrCreateCart(Long userId);
 }
