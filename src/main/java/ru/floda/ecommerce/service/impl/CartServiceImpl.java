@@ -11,6 +11,7 @@ import ru.floda.ecommerce.entity.Product;
 import ru.floda.ecommerce.entity.User;
 import ru.floda.ecommerce.exception.ResourceNotFoundException;
 import ru.floda.ecommerce.repository.CartRepository;
+import ru.floda.ecommerce.repository.ProductRepository;
 import ru.floda.ecommerce.repository.UserRepository;
 import ru.floda.ecommerce.service.CartService;
 
@@ -23,13 +24,12 @@ import java.util.List;
 public class CartServiceImpl implements CartService {
     private final CartRepository cartRepository;
     private final UserRepository userRepository;
+    private final ProductRepository productRepository;
 
     @Override
-    public CartDto getOrCreateCart(Long userId) {
-        Cart cart = cartRepository.findByUserId(userId)
+    public Cart getOrCreateCart(Long userId) {
+        return cartRepository.findByUserId(userId)
                 .orElseGet(() -> createCartForUser(userId));
-
-        return convertCartToDto(cart);
     }
 
     private Cart createCartForUser(Long userId) {
@@ -41,6 +41,33 @@ public class CartServiceImpl implements CartService {
                 .build();
 
         return cartRepository.save(cart);
+    }
+
+    public CartDto addToCart(Long userId, CartItemDto cartItemDto) {
+        Cart cart = getOrCreateCart(userId);
+
+        Product product = productRepository.findById(cartItemDto.getProductId())
+                .orElseThrow(() -> new ResourceNotFoundException("Продукт не найден"));
+
+        CartItem existingItem = cart.getCartItems()
+                .stream()
+                .filter(item -> item.getProduct().getId().equals(product.getId()))
+                .findFirst()
+                .orElse(null);
+
+        if (existingItem != null) {
+            existingItem.setQuantity(existingItem.getQuantity() + cartItemDto.getQuantity());
+        } else {
+            CartItem newItem = CartItem.builder()
+                    .cart(cart)
+                    .product(product)
+                    .quantity(cartItemDto.getQuantity())
+                    .build();
+            cart.addCartItem(newItem);
+        }
+
+        cartRepository.save(cart);
+        return convertCartToDto(cart);
     }
 
     private CartDto convertCartToDto(Cart cart) {
