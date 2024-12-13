@@ -45,7 +45,7 @@ public class User {
     private Instant createdAt;
 
     @LastModifiedDate
-    @Column(nullable = false)
+    @Column(insertable = false)
     private Instant updatedAt;
 
 }

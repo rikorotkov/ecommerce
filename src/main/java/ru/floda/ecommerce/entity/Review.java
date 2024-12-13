@@ -43,7 +43,7 @@ public class Review {
     private Instant createdAt;
 
     @LastModifiedDate
-    @Column(nullable = false)
+    @Column(insertable = false)
     private Instant updatedAt;
 
 }

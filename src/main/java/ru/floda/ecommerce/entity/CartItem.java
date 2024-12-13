@@ -37,7 +37,7 @@ public class CartItem {
     private Instant createdAt;
 
     @LastModifiedDate
-    @Column(nullable = false)
+    @Column(insertable = false)
     private Instant updatedAt;
 
     // Удобный метод для увеличения количества

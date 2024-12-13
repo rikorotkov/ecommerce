@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.floda.ecommerce.dto.CartDto;
 import ru.floda.ecommerce.dto.CartItemDto;
+import ru.floda.ecommerce.entity.Cart;
 import ru.floda.ecommerce.service.CartService;
 
 @RestController
@@ -19,5 +20,4 @@ public class CartController {
         CartDto updatedCart = cartService.addToCart(userId, cartItemDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(updatedCart);
     }
-
 }

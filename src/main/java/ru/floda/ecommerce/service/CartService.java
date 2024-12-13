@@ -8,4 +8,6 @@ public interface CartService {
     Cart getOrCreateCart(Long userId);
 
     CartDto addToCart(Long userId, CartItemDto cartItemDto);
+
+    CartDto getCart(Long userId);
 }

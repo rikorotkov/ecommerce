@@ -35,8 +35,6 @@ databaseChangeLog:
               - column:
                   name: updated_at
                   type: TIMESTAMP
-                  constraints:
-                    nullable: false
         - addForeignKeyConstraint:
             baseTableName: cart_items
             baseColumnNames: cart_id

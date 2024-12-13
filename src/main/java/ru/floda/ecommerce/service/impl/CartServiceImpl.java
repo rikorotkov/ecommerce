@@ -15,6 +15,7 @@ import ru.floda.ecommerce.repository.ProductRepository;
 import ru.floda.ecommerce.repository.UserRepository;
 import ru.floda.ecommerce.service.CartService;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,12 +63,18 @@ public class CartServiceImpl implements CartService {
                     .cart(cart)
                     .product(product)
                     .quantity(cartItemDto.getQuantity())
+                    .createdAt(Instant.now())
                     .build();
             cart.addCartItem(newItem);
         }
 
         cartRepository.save(cart);
         return convertCartToDto(cart);
+    }
+
+    @Override
+    public CartDto getCart(Long userId) {
+        return null;
     }
 
     private CartDto convertCartToDto(Cart cart) {
