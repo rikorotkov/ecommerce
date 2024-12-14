@@ -15,6 +15,12 @@ import ru.floda.ecommerce.service.CartService;
 public class CartController {
     private final CartService cartService;
 
+    @GetMapping("/{userId}")
+    public ResponseEntity<CartDto> findCart(@PathVariable Long userId) {
+        CartDto cartDto = cartService.findCart(userId);
+        return ResponseEntity.status(HttpStatus.OK).body(cartDto);
+    }
+
     @PostMapping("/{userId}/items")
     public ResponseEntity<CartDto> addItem(@PathVariable Long userId, @RequestBody CartItemDto cartItemDto) {
         CartDto updatedCart = cartService.addToCart(userId, cartItemDto);

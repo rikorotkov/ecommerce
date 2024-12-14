@@ -73,11 +73,12 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public CartDto getCart(Long userId) {
-        return null;
+    public CartDto findCart(Long userId) {
+        Cart cart = getOrCreateCart(userId);
+        return convertCartToDto(cart);
     }
 
-    private CartDto convertCartToDto(Cart cart) {
+    public CartDto convertCartToDto(Cart cart) {
         CartDto dto = new CartDto();
         User user = cart.getUser();
 
