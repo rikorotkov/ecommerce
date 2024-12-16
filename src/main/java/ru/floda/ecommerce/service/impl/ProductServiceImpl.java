@@ -26,6 +26,7 @@ public class ProductServiceImpl implements ProductService {
         List<Product> products = productRepository.findAll();
         return products.stream().map(this::convertToDto)
                 .collect(Collectors.toList());
+        // TODO: проверить!
     }
 
     @Override
